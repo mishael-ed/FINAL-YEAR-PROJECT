@@ -38,10 +38,16 @@ outcome_map = {
     "Pass": 1
 }
 
+gender_map = {
+    "Male": 0,
+    "Female": 1
+}
+
 df["Behavioral_Enc"] = df["Behavioral Rating"].map(behavioral_map)
 df["Grade_Enc"]      = df["Grade"].map(grade_map)
 df["Outcome_Enc"]    = df["Final Outcome"].map(outcome_map)
-
+df["Gender_Enc"]     = df["Gender"].map(gender_map)
+df["TN"] = df["Term"].map({"2022_T1":1,"2022_T2":2,"2022_T3":3})
 
 
 
@@ -53,20 +59,33 @@ all_students = []
 
 for student_id, group in df.groupby("Student ID"):
     
-    
     row = {}
-    row["Student ID"]    = student_id
-    row["avg_total"]     = group["Total Score"].mean()
-    row["min_total"]     = group["Total Score"].min()
-    row["avg_ca"]        = group["CA Score"].mean()
-    row["avg_attendance"]= group["Attendance %"].mean()
-    row["num_fails"]     = (group["Outcome_Enc"] == 0).sum()
-    row["fail_rate"]     = row["num_fails"] / len(group)
-    
+    row["Student ID"]     = student_id
+    row["gender"]         = group["Gender_Enc"].iloc[0]
+    row["avg_ca"]         = group["CA Score"].mean()
+    row["avg_attendance"] = group["Attendance %"].mean()
+    row["min_attendance"] = group["Attendance %"].min()
+    row["avg_behavioral"] = group["Behavioral_Enc"].mean()
+    row["min_behavioral"] = group["Behavioral_Enc"].min()
+
+    # trend — is attendance going up or down across terms?
+    term_att = group.groupby("TN")["Attendance %"].mean()
+    if len(term_att) >= 2:
+        row["att_trend"] = float(term_att.values[-1] - term_att.values[0])
+    else:
+        row["att_trend"] = 0.0
+
+    # trend — are CA scores improving or declining across terms?
+    term_ca = group.groupby("TN")["CA Score"].mean()
+    if len(term_ca) >= 2:
+        row["ca_trend"] = float(term_ca.values[-1] - term_ca.values[0])
+    else:
+        row["ca_trend"] = 0.0
+
     # TARGET: what are we trying to predict?
     # 1 = this student had at least one fail (at risk)
     # 0 = this student passed everything (safe)
-    row["at_risk"] = 1 if row["num_fails"] > 0 else 0
+    row["at_risk"] = 1 if (group["Outcome_Enc"] == 0).sum() > 0 else 0
     
     all_students.append(row)
 
@@ -127,7 +146,6 @@ for (student_id, term_num), group in df.groupby(["Student ID", "TN"]):
     row["avg_beh"]     = group["BE"].mean()
     row["avg_grade"]   = group["GE"].mean()
     row["fail_count"]  = (group["OE"] == 0).sum()
-    row["fail_rate"]   = row["fail_count"] / len(group)
     row["at_risk"]     = 1 if row["fail_count"] > 0 else 0
     term_records.append(row)
 
@@ -136,7 +154,7 @@ for (student_id, term_num), group in df.groupby(["Student ID", "TN"]):
 #sequences 
 
 FEATURES = ["avg_ca","avg_exam","avg_total","min_total",
-            "avg_att","min_att","avg_beh","avg_grade","fail_rate"] #here we define the input variables thta the model will use
+            "avg_att","min_att","avg_beh","avg_grade"] #here we define the input variables that the model will use
 
 SEQ_LEN = 2   # use 2 terms to predict the 3rd
 
@@ -147,7 +165,7 @@ term_df = pd.DataFrame(term_records).sort_values(["Student ID", "Term_Num"])
 for student_id, group in term_df.groupby("Student ID"):
     group = group.sort_values("Term_Num") #sorting the terms in the correct order so that the model doesnt learn wrong patterns
     
-    feature_values = group[FEATURES].values   # shape: (3, 9)
+    feature_values = group[FEATURES].values   # shape: (3, 8)
     risk_labels    = group["at_risk"].values  # shape: (3,)
     
     # sliding window
@@ -155,11 +173,11 @@ for student_id, group in term_df.groupby("Student ID"):
         X_sequences.append(feature_values[i : i + SEQ_LEN])  # terms 1 & 2
         y_labels.append(risk_labels[i + SEQ_LEN])             # term 3 label
 
-X = np.array(X_sequences)  # shape: (200, 2, 9)
-y = np.array(y_labels)     # shape: (200,)
+X = np.array(X_sequences)  # shape: (250, 2, 8)
+y = np.array(y_labels)     # shape: (250,)
 
-print("X shape:", X.shape)   # (200, 2, 9) — 200 samples, 2 timesteps, 9 features
-print("y shape:", y.shape)   # (200,)
+print("X shape:", X.shape)
+print("y shape:", y.shape)
 print("At-risk:", y.sum())
 
 
@@ -172,8 +190,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 scaler = StandardScaler()
 
 # have to reshape to 2D to fit, then reshape back to 3D
-X_train_flat = X_train.reshape(-1, 9)  
-X_test_flat  = X_test.reshape(-1, 9)    
+X_train_flat = X_train.reshape(-1, 8)  
+X_test_flat  = X_test.reshape(-1, 8)    
 
 scaler.fit(X_train_flat)   # learn mean and std from training data only
 
@@ -181,7 +199,7 @@ X_train = scaler.transform(X_train_flat).reshape(X_train.shape)
 X_test  = scaler.transform(X_test_flat).reshape(X_test.shape)
 
 model = Sequential([
-    LSTM(64, input_shape=(2, 9), return_sequences=True),
+    LSTM(64, input_shape=(2, 8), return_sequences=True),
     Dropout(0.3),
     LSTM(32, return_sequences=False),
     Dropout(0.2),
