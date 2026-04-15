@@ -1,0 +1,5 @@
+Student ID,Student Name,Term,Class,Predicted Outcome,Likelihood of Passing (%),Risk Level,Current CA Progress (%),Current Performance (%),Average Attendance (%),Historical Failed Subjects,main_issue
+STU_H001,Student HR 001,2026_T1,SS2,Fail,0.5,High,22.1,22.1,50.0,6,Student may struggle due to low current CA progress and low attendance.
+STU_H002,Student HR 002,2026_T1,SS1,Fail,1.0,High,24.6,24.6,57.1,6,Student may struggle due to low current CA progress and low attendance.
+STU_H003,Student HR 003,2026_T1,SS3,Fail,1.9,High,30.0,30.0,62.5,6,Student may struggle due to low current CA progress and low attendance.
+STU_H004,Student HR 004,2026_T1,SS2,Fail,0.5,High,22.5,22.5,50.0,6,Student may struggle due to low current CA progress and low attendance.

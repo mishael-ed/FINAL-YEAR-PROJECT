@@ -1,0 +1,5 @@
+Student ID,Student Name,Term,Class,Predicted Outcome,Likelihood of Passing (%),Risk Level,Current CA Progress (%),Current Performance (%),Average Attendance (%),Historical Failed Subjects,main_issue
+STU_L001,Student LR 001,2026_T1,SS2,Pass,91.4,Low,80.0,80.0,96.7,0,No major risk signal detected.
+STU_L002,Student LR 002,2026_T1,SS1,Pass,97.1,Low,73.8,73.8,92.9,0,No major risk signal detected.
+STU_L003,Student LR 003,2026_T1,SS3,Pass,94.6,Low,86.2,86.2,96.9,0,No major risk signal detected.
+STU_L004,Student LR 004,2026_T1,SS2,Pass,94.7,Low,70.0,70.0,92.3,0,No major risk signal detected.

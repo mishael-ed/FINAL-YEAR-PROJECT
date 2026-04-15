@@ -1,0 +1,5 @@
+Student ID,Student Name,Term,Class,Predicted Outcome,Likelihood of Passing (%),Risk Level,Current CA Progress (%),Current Performance (%),Average Attendance (%),Historical Failed Subjects,main_issue
+STU_M001,Student MX 001,2026_T1,SS2,Fail,1.3,High,47.9,47.9,80.0,3,Student may struggle due to low current CA progress and low current performance trend.
+STU_M002,Student MX 002,2026_T1,SS1,Fail,0.0,High,37.5,37.5,67.9,6,Student may struggle due to low current CA progress and low attendance.
+STU_M003,Student MX 003,2026_T1,SS3,Fail,3.2,High,57.9,57.9,87.5,0,No major risk signal detected.
+STU_M004,Student MX 004,2026_T1,SS2,Fail,2.3,High,32.5,32.5,61.5,6,Student may struggle due to low current CA progress and low attendance.

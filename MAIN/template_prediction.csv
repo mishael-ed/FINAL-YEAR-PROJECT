@@ -1,0 +1,5 @@
+Student ID,Student Name,Gender,Term,Class,Subject,CA Score,CA Total Score,Classes Held,Classes Attended,Attendance %,Behavioral Rating
+STU_101,Student 101,Female,2026_T1,SS2,Mathematics,22,40,28,24,85.7,Good
+STU_101,Student 101,Female,2026_T1,SS2,English,18,40,28,24,85.7,Good
+STU_102,Student 102,Male,2026_T1,SS1,Mathematics,10,40,28,16,57.1,Poor
+STU_102,Student 102,Male,2026_T1,SS1,English,12,40,28,16,57.1,Poor

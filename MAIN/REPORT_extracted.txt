@@ -1,0 +1,232 @@
+Design and Implementation of an Artificial Intelligence Powered Student Academic Performance Predictor
+By
+Mishael Evive Edegwa
+22120612975
+Computer and Information Sciences Department
+School of Science and Technology
+Pan-Atlantic University
+July, 2026
+Design and Implementation of an Artificial Intelligence Powered Student Academic Performance Predictor
+By
+Mishael Evive Edegwa
+22120612975
+A project submitted to the School of Science and Technology, Pan-Atlantic University
+in partial fulfillment of the requirements for the award of degree of Bachelor of Science (Computer Science) of Pan-Atlantic University.
+July, 2026
+Abstract
+In the current academic space, institutions heavily rely on reactive approaches to detect and combat poor student academic performance. Traditional academic evaluation techniques rely on tools like continuous assessments and end-of-semester results to determine the fate of students; after which the students who pass are promoted and those that fail end up redoing the course. Overall, course carryovers lead to the spending of extra resources on the part of students, institutions, and caretakers. The problems posed by current holistic methods for evaluating student performances led to the development of this project. This project presents the production of an Artificial Intelligence Based Student Performance Predictor and Early-Warning System. Its main function is to identify students who are at risk of failing by using real-time intra-semester data. 
+The system makes use of machine learning and ensemble learning models built with Python. These models are then trained using real historical student data from institutions. By providing a means by which institutions can be proactive in their identification of academic risk, the system supports a data-driven approach to timely educational intervention. 
+Keywords:  Artificial Intelligence, Student Performance Prediction, Early-Warning System, Machine Learning, Educational Data Mining, Academic Risk Detection
+ACKNOWLEDGEMENTS
+Dedication
+STUDENT'S DECLARATION
+I have read and understood the School of Science and Technology Policy on plagiarism. I declare that this project is my own work and that all sources are fully referenced. I also declare that I have not submitted this work for any other purpose.
+Mishael Evivie Edegwa
+22120612975
+Date: July 2026
+CERTIFICATION
+I certify that this work was carried out by 22120612975, in the School of Science and Technology, Pan-Atlantic University, under my supervision.
+________________________________
+Supervisor: Dr or Prof …
+School of Science and Technology
+Pan-Atlantic University
+Lagos, Nigeria
+Date: ______________
+Table of contents
+1. Chapter One: Introduction
+1.1. Background of the Study
+Student academic performance has and will always be one of the most potent indicators of national socio-economic success and stability. It influences the career composition, higher education access and overall world contribution of every well-structured society. The Nigerian education system constantly faces issues related to diminishing student performance. In a paper published by The Guardian Newspaper (2025), Iyabo Lawal reports that 31,596 out of 56,134 students from public secondary schools failed the 2024 West African Senior School Certificate Examination (WASSCE). Another article released by Adejuyigbe Francis (2025) estimates that the dropout rate of university students in Nigeria is about 22% with high failure rates being a contributor to this statistic. Considering these aforementioned facts, it is impossible to ignore the problems caused by poor personalized academic support for students who are struggling academically.
+Typically, academic facilitators rely on observation, traditional assessments like quizzes, and end-of-semester results to troubleshoot academic problems amongst their students. Unfortunately, such rudimentary methods detect struggling students too late during the journey through the semester. Also, manual methods of detecting academic problems are usually subject to human error like prior student bias, ignorance and sheer incompetence in some situations. Even though the majority of students who eventually fail at the end of the semester show early warning signs during the semester, these signs remain unnoticed when there are no intelligent systems in place to track these indicators over time. 
+Current advances in artificial intelligence and machine learning have brought about new opportunities in educational analytics and facilitation of learning activities. It is expected that artificial intelligence in U.S. Education will grow by 47.5% from 2017-2021 according to the Artificial Intelligence Market in the US Education Sector report. This proves that on a global scale, AI-powered systems are being implemented to predict performance, detect learning difficulties early, facilitate teaching and learning and support students by giving them a more personalized learning experience. However, the adoption of artificial intelligence and machine learning in Nigeria's education sector is rather slow and still in its infant stages. This thereby leaves a significant gap in locally tailored AI-powered predictive tools designed to meet the needs of Nigerian schools.
+This study bridges that gap by establishing an AI-powered Student Performance Prediction and Early-Warning System designed for Nigerian secondary schools and universities. The system will be able to predict students at risk of underperforming and alert the facilitators to take proactive action to combat the student performance decline. It will do this by analysing multi-term academic scores, attendance records, and subject-specific performance patterns. The model aims to help school administrators, counselors and teachers to make proactive decisions that can significantly improve learning outcomes by using machine learning techniques like Random Forest and Time Series Forecasting.
+This project is a milestone-worthy step toward modern academic monitoring, failure rate reduction and personalized academic experiences for the nation as a whole. This project has the potential to change student evaluation from a reactive-bias approach to a more proactive-bias approach.
+1.2. Statement of the Problem
+Academic institutions in Nigeria continue to experience high rates of student underperformance and failure. In 2024, the Lagos State Government raised its concerns about the abysmal performance of secondary school students as more than 50% of the students who sat for the examinations failed (Commissioner for Basic and Secondary Education, Jamiu Alli-Balogun, 2025). Even though studies have shown that students who end up failing in academia exhibit early signs of academic challenges during the semester, these patterns usually go undetected because of the reliance of schools on only traditional end-of-semester evaluations. Sole dependence on this reactive approach contributes to the rising failure rates in the country.
+1.3. Research Objectives
+General Objective
+Design and establish an artificial intelligence powered system that can predict student end-of-semester academic performance using intra-semester academic and behavioral data peculiar to each student. After which proactive measures will be taken to prevent the ultimate failure of students who are at risk of underperforming.
+Specific Objectives 
+To compile and arrange student behavioral, academic, and attendance records over several semesters in order to train models.
+To determine and examine important elements that have a major impact on student achievement.
+To develop and train machine learning models for forecasting students' future academic success, such as Random Forest and Time Series models.
+To use suitable performance indicators to assess and contrast the accuracy of various predictive models.
+To create an early-warning system that divides students into risk categories according to expected results.
+To evaluate the system's dependability for real-world use and validate it using actual school data.
+1.4. Significance of the Study
+The study is noteworthy due to the fact that underperformance is a major problem that plagues the Nigerian education sector. Even in the presence of persistent student failures, most institutions still rely heavily on traditional end of term examinations and evaluations to detect student underperformance. Such archaic methods when used alone fail to detect student risk of failure early. By introducing and building an AI-powered solution to enhance student performance monitoring in academic institutions, this study provides a cutting-edge, data-driven approach to a field that desperately needs more proactive, evidence-based academic management.
+Contribution to Knowledge:
+This study builds on existing literature by establishing a machine-learning-based model optimized specifically for Nigerian school data patterns. It develops insights into localized behavioral factors which may be a strong predictor for student academic performance within the Nigerian context. 
+Beneficiaries:
+Students: Lower failure rates as they get timely intervention and help when tendencies for academic decline are detected.
+Parents: Costs of resits and carry overs as a result of poor academic performance of their wards will be drastically reduced as a more proactive approach will be taken to prevent student failure.
+Educational Institutions: Patterns detected from student data could be used to build and strengthen student support systems to help reduce their failure rates and build more effective teaching and learning strategies. 
+The Field of Computer Science: Benefits from a real-world implementation of AI in education in impoverished nations, broadening the field's research focus.
+1.5. Scope of the Study
+The study encompasses the design, development and testing of an AI-powered system for predicting student academic performance in Nigerian institutions. It includes the sourcing and processing of student data relevant to the study. The data such as subject continuous assessment scores, attendance records and other behavioral indicators across multiple terms.
+The data will be confined to a small number of institutions based on availability of data. Psychological, socio-economic and other home-related data that are not formally standardized to the schools records will be ignored. Only quantitative data will be contained in this study.
+This study does not account for the establishment of a school learning management system or real-time classroom analytics. It is confined to predictive modelling of data and early-warning classifications. The system will be tested and evaluated on accuracy of prediction and system usability within the Nigerian education space.
+1.6. Limitations of the Study
+As a result of the study being heavily dependent on the data received from a very small number of schools in Nigeria, the machine-learning model which is responsible for doing the student performance predictions may be biased to their patterns of those specific institutions rather than all the Nigerian schools present at the time. Therefore, the application of the model to other geographical areas, school types or educational contexts may pose some difficulties.
+Secondly, quantitative data collected by schools are not the only factors responsible for the performance of students in schools. Other factors like socio-economic background, home structure and psychological variables of the students are heavily influential in student performances. Unfortunately, these factors are not collected by schools in Nigeria due to privacy concerns and other cultural limitations. And the exclusion of these unrecorded determinants may limit the system’s ability to completely reflect the complexity of a student's performance.
+Finally, the study is focused on performance prediction as opposed to measuring the effects of any corrective actions the institutions may choose to take based on the results of the model. This limitation may affect further applicability of the system beyond the immediate Nigerian schooling environment. 
+1.7. Organization of the Study
+The study is split into five chapters. Chapter one contains an introduction to the study. This introduction begins with the overall background of the study, which is later followed by the statement of the problem, the objectives of the research, significance of the study, scope of the research, limitations of the study, organization of the study and finally the operational definition of terms.
+Chapter two contains the literature review of the study. It goes over empirical studies related to the framework and foundations of student performance prediction, machine learning models, educational analytics and early-warning systems. 
+Chapter three goes over the analysis, design and production of the system. In this chapter, the current methods of student performance monitoring are analyzed. The limitations are then extrapolated after which the proposed AI-powered prediction system is proposed as an appropriate solution to the limitations. Blueprints of the models are explored and presented to give more incite into the workings of the system. This chapter also explains the tools, techniques and workflow that are applied in the development of the system.
+Chapter four expatiates on the implementation of the system. All the hardware and software requirements are clearly outlined. This chapter also explains how the system is executed and shows relevant outputs and explanations of the workings of the system.
+Chapter five closes the curtain to the work by encapsulating the key findings, stating a defined conclusion drawn from the study and suggesting ways in which the established system could be improved in the future. It also opens up some more topics that could be further researched that are closely related to the system explored in the study. 
+1.8. Operational definition of terms
+Academic Performance:
+A measure of a student's overall achievement at the end of a specific term or semester that is represented through continuous assessment scores, final examination scores and overall grade points.
+Artificial Intelligence (AI):
+This refers to the computational ability of computers to perform tasks that typically require human intelligence to execute. Such tasks involve learning, reasoning and problem-solving. In this study, AI refers to the predictive modelling used to forecast the academic performance of students.
+Machine Learning (ML):
+A Branch of artificial intelligence that empowers systems to learn data patterns and improve the accuracy of predictions over time. In this study, it will be used to identify these data patterns in student records to make predictions of student performances as accurate as possible.
+Predictive Model:
+This is a mathematical model that is trained based on historical student records and the model is then used to estimate the probability of poor student performance or improvement.
+Early-Warning System:
+A system that uses outputs derived from a predictive model to identify students who are at risk of failing before the underperformance occurs at the end of the semester.
+Student Records/Data:
+Processed academic and behavioral information about a student that are formally taken down by the academic institution for future purposes. In this study, the data is used as input for the predictive model.
+Behavioral Indicators:
+Non-academic factors that are recorded by an institution about a student's discipline and behavioral ratings which may also remotely influence academic performance.
+Risk Category:
+This is a classification of a student's performance during the semester based on the model’s prediction of said students' performance at the end of the semester.
+Chapter Two: Literature Review
+Gharkan, H.,K., Radif, M., J., Alsaeedi, A., H. (2025). Analysis of ai-empowered predictive models for predicting student performance in higher education. Journal of Al-Qadisiyah for Computer Science and Mathematics, 17(1), 103-121. https://www.researchgate.net/publication/390541470_Analysis_of_AI-_Empower_Predictive_Models_for_Predicting_Student_Performance_in_Higher_Education 
+2.1. Research Questions from the Literature
+The main research questions addressed in Gharkan et al. (2005) are as follows:
+What are the artificial intelligence and machine learning techniques that have been used to predict student academic performance in the past?
+Which of those models were the most accurate and reliable for student performance?
+What are the types of datasets that are commonly used in AI-powered student performance prediction models and what are some of the features of these datasets?
+What are the current limitations and research gaps in current studies relating to AI-based student performance prediction?
+2.2 Major Theories Examined in the Study
+Predictive Analysis
+This is the theory that future outcomes can be predicted using the patterns presented in historical data. In the context of academia, we apply this theory by using past student data such as grades, attendance and other engagement metrics to predict the future performance of the student academically. 
+Machine Learning
+This theory proposes that systems can identify patterns from data and use it to teach themselves 
+Without explicit programming. In the context of this study, the models are trained using labeled datasets and as the system continues to train itself from the data it is fed, it improves its performance. 
+In this study, it is examined how machine learning algorithms such as Decision Trees, Support Vector Machines, Random Forests and Logistic Regression can learn relationships between the student performance attributes and the student academic outcomes.
+Ensemble Learning 
+Since different models capitalize on different data patterns after being fed the datasets, the ensemble learning theory posits that combining the operations of different machine learning models yields a better predictive performance than using a single one. 
+This study reviews different ensemble approaches like Random Forest, AdaBoost and Gradient Boosting, thereby demonstrating the high accuracy of ensemble models in the context of student performance prediction.
+Deep Learning 
+It is a subset of machine learning within artificial intelligence which applies a multi-layered neural network to automatically break down and learn complex and non-linear patterns from vast datasets.
+In this study, deep learning architectures like Artificial Neural Networks, Convolutional Neural Networks and Long Short-Term Memory networks are explored for analyzing behavioral student data. 
+Early-Warning System 
+This is a system that is mainly focused on the timely identification of risk conditions to prevent irreversible occurrences and instigate an interventive reaction from an administrator. 
+In the case of this study, AI predictive models function as the early-warning system mechanisms by closely monitoring dynamic and static student datasets and alerting proactive student support when the need be.
+2.3 Research Methodology
+Research Design
+The research design applied for this study was the systematic literature review. Instead of capitalizing on primary data, this study identified and analysed existing research studies on AI-based student academic performance prediction. After which the knowledge was then synthesized for further understanding.
+Sample Size
+The sample size of this study was over 70 peer-reviewed studies which were used for the systematic literature review.
+Independent Variables 
+The independent variables in this study include the machine learning and ensemble learning techniques that were explored as well as the different feature types present in the datasets. These include:
+Machine learning algorithms - Decision Trees, SVM, Random Forest, Logistic Regression
+Ensemble learning models - AdaBoost, Gradient Boosing
+Deep learning models - ANN, CNN, LSTM
+Datasets - Learning management system activity, attendance records, demographic data
+Dependent Variables
+The dependent variable in the study was the student academic performance. It was measured as pass/fail status, grades or GPA, course completion and academic success or failure classification.
+Measurement Methods of the Study 
+The performance evaluation metrics that were reported in the study include the following:
+Accuracy 
+Precision
+Recall
+F1-Score
+Area Under the Curve
+2.4 Summary of the Major Results
+One major result of the study was the discovery that AI-based predictive models are highly effecting in predicting student academic performance. Across the reviewed studies, the AI-based models generally outperformed traditional statistical methods in terms of the accuracy and reliability of the prediction of the student academic performance.
+Another result was that due to the ability of ensemble methods to combine multiple classifiers, it drastically reduced the prediction errors of the models and this gave it the upper hand in predictive accuracy as compared to single machine learning models. The ensemble learning models that greatly reflected this were the Random Forest, Gradient Boosting and AdaBoost.
+During the study, there were some time-dependent educational datasets that were used such as the learning management system (LMS) activity logs. The study revealed that deep learning models like Artificial Neural Networks and Long Short-Term Memory networks are very effective in handling these types of datasets. They displayed a stronger potential for the timely identification of students who were at risk of underperforming academically.
+Furthermore, the study revealed that combining multiple data sources and features produced better prediction outcomes than just using a single data type. This includes the total processing of datasets like academic records, attendance logs and other student engagement metrics. The more diverse the datatypes used, the more accurate the predictive ability of the models were. 
+And finally, the study revealed that although a lot of models achieve high accuracy, few studies implement real-time early warning systems. A lot of the models also lack adaptability across different contexts of education especially in developing countries. 
+2.4 Major Contribution of the Study 
+According to the author, the major contribution of the study is an up-to-date systematic review of other peer-reviewed studies that used AI-based models to predict student academic performance. In this study, the authors grouped and categorized the different models in the peer-reviewed studies into machine learning, deep learning, ensemble learning and hybrid approaches. Doing this, they were able to clearly define and compare the performance of all the different approaches when it comes to student academic performance prediction. 
+The study also contributes by comparing and contrasting different AI-based models on importance performance metrics, data types and application contexts. This simplifies processes for other researchers and practitioners which may want to identify the most effective approaches for their early-warning systems and student performance prediction systems. In the study, the authors also identify the limitations and gaps in the current research work that has been done on the topic of AI-based prediction for student academic performance. This leaves a clear direction for other individuals and organizations that may be interested in performing further work in the field of student academic performance prediction and early-warning systems. 
+2.5 Strengths and Weaknesses of the Study 
+Strengths
+A major strength of the study is the use of over 70 peer-reviewed articles which were analyzed across multiple databases. Such a broad coverage of studies ensures that the findings are valid. Additionally, grouping the predictive models into machine learning, deep learning and ensemble learning approaches ensures that it is easy to identify and study the trends and draw meaningful comparisons from their techniques and approaches. 
+Secondly, the study applies standard performance evaluation metrics for predictive models. These metrics include accuracy, precision, recall, F1-score and area under curve. The consistency in using such metrics ensures that it is applicable to a wide range of research works and is understandable by anyone who is a practitioner or researcher in the field of artificial intelligence. 
+Weaknesses
+A major weakness from this study is the fact that the study is a literature review and is backed on secondary data. The fact that the researchers did not conduct and make use of their own independent experimental validation of the models limits their abilities to verify some reported performance results. 
+Secondly, the use of different studies presents the issue in the variation of datasets, feature selection models and evaluation metrics. Even though the variation is not big enough to the point where it can lead to major difficulties in comparison, the inconsistencies present are still enough to retard the direct comparability of some of these models. 
+Finally, the study highlights the potential of an early-warning system for higher education but fails to suggest a practical implementation framework. This thereby limits its immediate functionality for deployment in real-world educational environments, particularly in developing countries. 
+Chapter Three: Systems Analysis, Design and Production
+3.1 Analysis of Existing/Present System
+The current system used for student performance monitoring and evaluation is heavily manual and reactive. It is reactive in the sense that it is results based and depends on already determined student results to make judgements on how a student is performing in the semester, or how they have performed which is always the worst case scenario due to how late such evaluations are made. In Nigeria, student continuous assessments, examination results, attendance records, class participation and other behavioral metrics are recorded by the teachers during the semester and they are then stored in physical files or very basic spreadsheet formats. This information is then processed at the end of the semester and packaged into report cards to show the students in question and parents of the students how they performed. It is then at this stage that decisions about whether the student is to do extra work for the course by resitting for the examination or having a do-over for said courses will be necessary. 
+From the above analysis of the present system for evaluating student performance, we see that traditional holistic methods that are currently in use are very reactive. This means that students are only classified as doing well or poorly only after report cards have been packaged and shipped to the parents inbox. The current system relies heavily on the personal observatory skills and intuition as well as student continuous assessment averages to try and identify struggling students throughout the semester. There is no structured analysis of student trends across multiple terms for school administrations to make extrapolations of future student results.
+Merits of the Existing System
+One major merit of the current system for student performance evaluation is that little to almost no technical know-how is required for this type of data processing. Teachers are usually familiar with the system currently in place as it is used by many academic institutions in Nigeria at the moment. Little training is required and it is usually a very straightforward approach. Also, the absence of a technical know-how rests on the fact that little technical infrastructure is required for the current systems to run successfully.
+Secondly, due to how popularized the current system is, it is trusted by a lot of parents and academic institutions already. This solidifies an already existent familiarity bias to it even though it may not be the most efficient approach especially with the current technological advancement in today’s society.
+Demerits of the Existing System
+Firstly, the most obvious disadvantage to traditional student performance evaluation techniques is that academic failure of the student already starts to occur before it is detected. This leads to the school and parents having to resort to corrective actions to solve the issue instead of preventative actions to combat the chances of failure of the student. In the long run, such corrective actions cost more resources on the part of the student, institution and parents. 
+Secondly, current performance analysis methods are dependent on the intuition and observational skills of facilitators in academic institutions. This leaves the risk of subjectivity bias as different teachers process information differently. The subjectivity bias also creates a breakdown in structure which is a very necessary feature to ensure that data processing is done uniformly and efficiently. 
+Thirdly, academic data is usually evaluated on a per-semester or per-term basis. Multisemester analysis is never carried out by most institutions to identify individual student performance trends and patterns and extrapolate other necessary conclusions. This creates an obvious gap in the current system for student performance analysis.
+Lastly, the scalability of the current system is limited as the schools population increases. This is mainly due to the limited number of facilitators in any institution during a semester at any given point in time. When the school’s population increases, trying to make intrasemester judgments of individual student performance is not feasible and very inaccurate as compared to an automated system. 
+3.2 Design of Proposed System
+The proposed system to tackle the reactive nature of current educational student performance evaluation systems is an AI-based Academic Performance Prediction and Early-Warning System. The main functionality of this system is to take student academic, attendance and behavioral data, process and analyze it, and then generate predictive insights on the future academic performance of the students. Then, students, parents and institutions can maintain a rather proactive and preventative approach against student failure by implementing different methods to change the fate of the student during that semester instead of at the end of the semester. The system will follow a modular approach in relation to its design as it will consist of data input, data processing and data output components. 
+The system design is structured using standard system design and analysis tools. These tools include system architecture diagrams, data flow diagrams (DFDs), flow charts and unified modelling language (UML) diagrams. The main aim of this section is to show how the different components of the software operate and work in synchronization with each other to achieve the ultimate goal of accurate student performance prediction.
+System Architecture
+The overall architecture of the proposed system follows a three-tier approach as illustrated in Figure 3.2.1. The tiers are as follows:
+Presentation Layer:
+This layer is also known as the program user interface. It offers an interface through which institution facilitators and administrators can interact with the AI model. Using this interface, users will be able to upload important student metrics and data, view prediction results and monitor student risk levels. 
+Application Layer:
+This is the business logic unit of the system. This is the powerhouse of the software as data processing, feature extraction, model training and prediction will take place. The data will be fed from the user interface and processed in this layer before being sent back to the layer above it for real world use. 
+Data Layer:
+This layer handles the structuring of data. Due to the high amounts of data that will be processed in this system, it is important that a well structured approach is taken in terms of data storage. Therefore, a schema will be implemented in this layer to ensure consistency and organization. Any data fed into the system through the presentation layer will be stored in this layer and any output generated by the business logic unit will also be stored in this layer. 
+Figure 3.2.1
+Data Flow Design 
+Data flow diagrams describe the flow of data within a system. In this system, the highest level (Level O DFD) demonstrates that the system accepts student data as input, processes it and gives the performance prediction as the output for the user. This will be demonstrated in Figure 3.2.2. 
+Figure 3.2.2
+The level 1 Data Flow Diagram on the other hand provides a more detailed demonstration of the internal flow of data from the source to the structured databases, to the processing mechanisms and then back as output to the user. This will be demonstrated in Figure 3.2.3.
+Figure 3.2.3
+Process Flow Design
+The flow chart in Figure 3.2.4 is used to describe the logical flow of operations that the system carries out to generate a thesis on a student’s performance prediction using the machine learning model. The system first initiates the process when the admin uploads the student data that is necessary to carry out the operation. Data validation is then carried out on the uploaded data and then data processing is initiated. After the data is processed, it is fed into the machine learning model and an output is generated. Based on that output, the student is then categorized into a risk profile and further reports are generated to aid analysis of the student. 
+Figure 3.2.4
+UML Design
+The system design also includes the Unified Modeling Language (UML) designs to explain how the system behaves and how it is structured together. 
+The Use Case Diagram in Figure 3.2.5 defines the key actors and how they interact with the academic prediction system. Some of those interactions are uploading data, viewing predictions and generating reports. 
+The Class Diagram, shown in Figure 3.2.6 illustrates the major system classes along with their attributes and relationships.
+Figure 3.2.5
+Figure 3.2.6
+3.3 Production of the System
+This aspect of the literature expatiates on the tools, technologies and the workflow that was used in developing and implementing the AI-Based Student Performance Predictor and Early-Warning System. In the production of this system, data collection techniques, machine learning models and good user interface principles were integrated to ensure not only accurate prediction of student performance, but also effective and functional system usage by the targeted users. 
+3.3.1 Production Tools
+The tools used in the development of the prediction system are divided into hardware, software and online infrastructure.
+Hardware Tools
+A personal computer that has a minimum of 8GB of RAM and enough storage to handle the student datasets and machine learning models.
+Internet connectivity to support the data sourcing from LMS, software installation and deployment of the system.
+Software Tools 
+Programming Language: Python
+Development Environment: Visual Studio Code and Jupyter Notebook for coding, experimentation and model evaluation.
+Machine Learning Libraries: TensorFlow for implementing the LSTM model, Scikit-learn for Random Forest models, preprocessing, and evaluation. Pandas and NumPy for data manipulation and numerical computation. 
+Database Management System: MySQL 
+User Interface Framework: Streamlit for developing the dashboard that presents the prediction results.
+Version Control System: Github for tracking changes throughout the development process.
+Online Infrastructure
+Web browser access
+3.3.2 Production Workflow
+Production of this system followed a structured and algorithmic approach to ensure that there was no confusion, errors were easy to track, and there was system reliability.
+Data Preparation:
+In this stage, student academic, attendance and LMS data were collected and structured in a way that was suitable for data analysis and for feeding into the model for training.
+Data Processing:
+Using feature engineering techniques, the data was then normalized, cleaned and transformed for more preparation to use them for machine learning model training.
+Model Development:
+Predictive models like the Long Short-Term Memory for time series, Random Forest Algorithms and other ensemble learning models were developed and trained using the processed datasets.
+Model Evaluation:
+Using machine learning performance metrics, the effectiveness and performance of the models were tested. This stage was crucial because we were looking forward to developing a system that is accurate.
+System Integration:
+The machine learning models were integrated into the system backend to enable real-time performance prediction after the school staff uploads the students’ information during real-world use.
+Interface Development:
+A functional dashboard that is user-friendly was developed to enable actors to interact with the system.
+Testing and Refinement:
+The complete system went through functional and performance testing followed by important refinements that improved the results of the users.
+Deployment:
+The system was then deployed for demonstration and evaluation within the academic context which it was targeted for.
+References
+Lawal, I. (2025, May 27). WASSCE: Fresh concerns over failure rate, education decline. The Guardian Nigeria News. https://guardian.ng/news/wassce-fresh-concerns-over-failure-rate-education-decline/ 
+Salau, G. (2025, April 25). 54.3% of Lagos students failed WASSCE in 2024. The Guardian Nigeria News. https://guardian.ng/news/54-3-of-lagos-students-failed-wassce-in-2024/ 
+Ugbodaga, K. (2025, April 24). 31,596 students fail WASSCE in Lagos public schools. P.M. News Nigeria. https://pmnewsnigeria.com/2025/04/24/31596-students-fail-wassce-in-lagos-public-schools/
+Gharkan, H. K., Radif, M. J., & Alsaeedi, A. H. (2025). Analysis of AI-empower predictive models for predicting student performance in higher education. Journal of Al-Qadisiyah for Computer Science and Mathematics, 17(1), 103–121. https://www.researchgate.net/publication/390541470_Analysis_of_AI-_Empower_Predictive_Models_for_Predicting_Student_Performance_in_Higher_Education

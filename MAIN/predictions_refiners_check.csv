@@ -1,0 +1,3 @@
+Student ID,Student Name,Term,Class,avg_ca_pct,avg_overall_pct,avg_attendance,subject_failure_count,pass_probability,predicted_outcome,risk_tier
+STU_101,Student 101,2026_T1,SS2,50.0,50.0,85.7,1,0.10124378378198329,Fail,High
+STU_102,Student 102,2026_T1,SS1,27.5,27.5,57.1,2,0.01637789343814855,Fail,High

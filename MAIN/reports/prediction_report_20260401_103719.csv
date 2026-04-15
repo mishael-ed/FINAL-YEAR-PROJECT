@@ -1,0 +1,11 @@
+Student ID,Term,Class,Predicted Outcome,Likelihood of Passing (%),Risk Level,Current CA Progress (%),Overall Score Progress (%),Average Attendance (%),Historical Failed Subjects,main_issue
+Adaeze Umeh,2024_T1,SS1,Pass,64.4,Medium,59.6,0.0,95.8,6,Student may struggle due to low overall score trend and multiple subject-level failures.
+Amara Nwosu,2024_T1,SS1,Fail,16.4,High,18.8,0.0,59.0,6,Student may struggle due to low current CA progress and low attendance.
+Babatunde Fashola,2024_T1,SS2,Fail,2.0,High,38.8,0.0,77.2,6,Student may struggle due to low current CA progress and low overall score trend.
+Chioma Okafor,2024_T1,SS1,Pass,62.2,Medium,59.6,0.0,91.3,6,Student may struggle due to low overall score trend and multiple subject-level failures.
+Chukwuemeka Obi,2024_T1,SS3,Fail,1.2,High,41.2,0.0,79.4,6,Student may struggle due to low current CA progress and low overall score trend.
+Emeka Nnamdi,2024_T1,SS1,Fail,16.4,High,20.8,0.0,55.1,6,Student may struggle due to low current CA progress and low attendance.
+Fatima Aliyu,2024_T1,SS1,Fail,2.4,High,43.8,0.0,72.3,6,Student may struggle due to low current CA progress and low attendance.
+Ngozi Eze,2024_T1,SS3,Pass,58.2,Medium,63.8,0.0,95.2,6,Student may struggle due to low overall score trend and multiple subject-level failures.
+Segun Afolabi,2024_T1,SS3,Fail,16.4,High,23.3,0.0,52.1,6,Student may struggle due to low current CA progress and low attendance.
+Tunde Adeyemi,2024_T1,SS1,Fail,2.4,High,47.1,0.0,75.3,6,Student may struggle due to low current CA progress and low overall score trend.

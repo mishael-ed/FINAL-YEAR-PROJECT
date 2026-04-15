@@ -1,0 +1,32 @@
+STUDENT ACADEMIC PREDICTOR - HOW TO RUN
+
+Project folder:
+c:\Users\misha\OneDrive\Desktop\Student Academic Predictor
+
+1) Open PowerShell in the project folder
+
+2) Install requirements (run once per environment):
+C:\Users\misha\AppData\Local\Programs\Python\Python313\python.exe -m pip install -r requirements.txt
+
+3) Train the model (run when you need to retrain):
+C:\Users\misha\AppData\Local\Programs\Python\Python313\python.exe train.py --input refinersschoolsdataset.xlsx
+
+4) Run prediction from CLI:
+C:\Users\misha\AppData\Local\Programs\Python\Python313\python.exe predict.py --input refinersschoolsdataset.xlsx --output predictions.csv
+
+5) Launch the Streamlit app:
+C:\Users\misha\AppData\Local\Programs\Python\Python313\python.exe -m streamlit run app.py
+
+6) Optional MySQL integration (recommended for persistent records):
+- Install requirements first (Step 2 includes SQLAlchemy + PyMySQL now).
+- Before running app.py, set:
+  $env:MYSQL_URL="mysql+pymysql://user:password@host:3306/database_name"
+- In the app sidebar, click "Test MySQL Connection".
+- Keep "Auto-save upload/manual records + prediction runs" checked.
+- You can then run:
+  a) upload/manual predictions (auto-saved to MySQL), and
+  b) predictions directly from current MySQL records (reflects DB edits).
+
+Notes:
+- If app says model is missing, run Step 3 first.
+- predictions.csv will be created in the project folder.

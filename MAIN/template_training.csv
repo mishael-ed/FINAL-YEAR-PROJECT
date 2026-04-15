@@ -1,0 +1,5 @@
+Student ID,Student Name,Gender,Term,Class,Subject,CA Score,CA Total Score,Exam Score (%),Grade,Classes Held,Classes Attended,Attendance %,Behavioral Rating,Final Outcome
+STU_001,Student 001,Female,2022_T1,SS2,Mathematics,28,40,67,B,30,27,90.0,Good,Pass
+STU_001,Student 001,Female,2022_T1,SS2,English,24,40,60,C,30,27,90.0,Good,Pass
+STU_002,Student 002,Male,2022_T1,SS1,Mathematics,14,40,33,F,30,18,60.0,Average,Fail
+STU_002,Student 002,Male,2022_T1,SS1,English,16,40,36,F,30,18,60.0,Average,Fail

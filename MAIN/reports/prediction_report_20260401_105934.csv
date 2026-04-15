@@ -1,0 +1,11 @@
+Student ID,Term,Class,Predicted Outcome,Likelihood of Passing (%),Risk Level,Current CA Progress (%),Overall Score Progress (%),Average Attendance (%),Historical Failed Subjects,main_issue
+STU_101,2026_T1,SS3,Fail,23.7,High,51.7,0.0,69.5,6,Student may struggle due to low attendance and low overall score trend.
+STU_102,2026_T1,SS1,Fail,7.9,High,20.2,0.0,49.6,6,Student may struggle due to low current CA progress and low attendance.
+STU_103,2026_T1,SS1,Fail,19.8,High,49.6,0.0,71.1,6,Student may struggle due to low current CA progress and low attendance.
+STU_104,2026_T1,SS3,Pass,60.8,Medium,79.6,0.0,94.5,6,Student may struggle due to low overall score trend and multiple subject-level failures.
+STU_105,2026_T1,SS2,Fail,30.3,High,44.1,0.0,74.8,6,Student may struggle due to low current CA progress and low attendance.
+STU_106,2026_T1,SS1,Pass,60.8,Medium,71.7,0.0,92.0,6,Student may struggle due to low overall score trend and multiple subject-level failures.
+STU_107,2026_T1,SS1,Fail,7.9,High,23.9,0.0,45.2,6,Student may struggle due to low current CA progress and low attendance.
+STU_108,2026_T1,SS1,Fail,22.9,High,44.4,0.0,73.4,6,Student may struggle due to low current CA progress and low attendance.
+STU_109,2026_T1,SS3,Fail,7.9,High,22.2,0.0,42.3,6,Student may struggle due to low current CA progress and low attendance.
+STU_110,2026_T1,SS1,Pass,60.8,Medium,83.3,0.0,93.6,6,Student may struggle due to low overall score trend and multiple subject-level failures.
