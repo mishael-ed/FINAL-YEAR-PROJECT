@@ -201,12 +201,16 @@ def run_prediction_pipeline(raw_df: pd.DataFrame, source_label: str, save_raw: b
     preds = add_issue_reason(preds)
     st.session_state["preds"] = preds
     st.session_state["pred_source"] = source_label
-    st.success(f"Generated predictions for {len(preds):,} student-term records")
+    
+    # Show which models were used
+    models_used = preds["prediction_models"].iloc[0] if len(preds) > 0 and "prediction_models" in preds.columns else "Ensemble"
+    st.success(f"Generated predictions for {len(preds):,} student-term records using {models_used}")
 
     maybe_save_to_mysql(raw_df=raw_df, preds=preds, source_label=source_label, save_raw=save_raw)
 
 
 st.markdown("### Step 1: Run Intra-semester Predictions (no Final Outcome required)")
+st.caption("Predictions use an ensemble of all trained models: Random Forest + XGBoost + LSTM for maximum accuracy")
 pred_file = st.file_uploader("Upload Prediction File (CSV/XLSX)", type=["csv", "xlsx", "xls"], key="pred")
 
 st.markdown("#### Or Enter Student Records Manually")

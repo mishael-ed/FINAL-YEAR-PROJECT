@@ -71,7 +71,6 @@ def clean_data(df):
     if "Exam Score (%)" in data.columns:
         data["Exam %"] = pd.to_numeric(data["Exam Score (%)"], errors="coerce").fillna(0.0)
     elif "Exam Score" in data.columns:
-        # If raw exam is provided, normalize assuming 60 max.
         data["Exam %"] = (pd.to_numeric(data["Exam Score"], errors="coerce").fillna(0.0) / EXAM_MAX_SCORE) * 100.0
     else:
         data["Exam %"] = 0.0
