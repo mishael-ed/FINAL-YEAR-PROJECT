@@ -29,24 +29,10 @@ st.markdown(
   background: radial-gradient(circle at top left, #1b1e2b 0%, #0f1117 45%);
   color: #f3f4f8;
 }
-.stDeployButton {
-  display: none;
-}
-[data-testid="stDeployButton"] {
-  display: none;
-}
-#MainMenu {
-  display: none;
-}
-[data-testid="stToolbar"] {
-  display: none;
-}
-header {
-  visibility: hidden;
-}
-footer {
-  visibility: hidden;
-}
+.stDeployButton { display: none !important; }
+[data-testid="stDeployButton"] { display: none !important; }
+button[kind="deployButton"] { display: none !important; }
+footer { visibility: hidden; }
 .block-container { max-width: 1180px; }
 .hero {
   background: linear-gradient(120deg, #2b1055, #5b2aa8);
@@ -60,6 +46,14 @@ div[data-testid="stMetric"] {
   border: 1px solid #30364a;
   border-radius: 10px;
   padding: .5rem .75rem;
+}
+/* Add label to sidebar toggle */
+[data-testid="collapsedControl"]::before {
+  content: "DATABASE INTEGRATION";
+  font-size: 11px;
+  color: #888;
+  margin-right: 4px;
+  font-weight: bold;
 }
 </style>
 """,
@@ -90,7 +84,7 @@ if "auto_save_mysql" not in st.session_state:
 
 
 with st.sidebar:
-    st.markdown("### MySQL Integration")
+    st.markdown("### DATABASE INTEGRATION")
     db_url = st.text_input(
         "MySQL SQLAlchemy URL",
         value=st.session_state["db_url"],
